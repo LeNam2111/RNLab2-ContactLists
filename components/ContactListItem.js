@@ -30,7 +30,7 @@ const ContactListItem = ({ name, avatar, phone, onPress}) => {
 }
 
 
-ContactListItem.prototype.onPress ={
+ContactListItem.prototypes ={
     name : PropTypes.string,
     avatar : PropTypes.string,
     phone : PropTypes.string,
@@ -40,14 +40,15 @@ ContactListItem.prototype.onPress ={
 
 const styles = StyleSheet.create({
     container:{
-        paddingLeft: 24,
+        paddingLeft: 50,
+        marginTop: 0,
 
     },
     contactInfo:{
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 16,
+        paddingTop: 24,
         paddingBottom:24,
         
         borderBottomColor: color.grey,
@@ -55,15 +56,15 @@ const styles = StyleSheet.create({
 
     },
     avatar:{
-        borderRadius: 22,
-        width: 45,
-        height: 45,
+        borderRadius: 50,
+        width: 50,
+        height: 50,
         
     },
     details:{
         justifyContent: 'center',
         flex: 1,
-        marginLeft: 20
+        marginLeft: 25
     },
     title:{
         color: color.black,

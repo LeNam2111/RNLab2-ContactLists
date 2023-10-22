@@ -1,9 +1,9 @@
+import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import ContactThumbnail from '../components/ContactThum';
-import DetailListItem from '../components/ContactListItem';
-import { fetchRandomContact } from '../until/api';
-import colors from '../utils/colors';
+import ContactThum from '../components/ContactThum';
+import DetailListIt from '../components/DetailListItem';
+import colors from '../until/color';
 
 
 const Profile = ({ route }) => {
@@ -12,12 +12,12 @@ const Profile = ({ route }) => {
     return (
         <View style={styles.container}>
             <View style={styles.avatarSection}>
-                <ContactThumbnail avatar={avatar} name={name} phone={phone} />
+                <ContactThum avatar={avatar} name={name} phone={phone} />
             </View>
             <View style={styles.detailsSection}>
-                <DetailListItem icon="mail" title="Email" subtitle={email} />
-                <DetailListItem icon="phone" title="Work" subtitle={phone} />
-                <DetailListItem icon="smartphone" title="Personal" subtitle={cell} />
+                <DetailListIt icon="mail" title="Email" subtitle={email} />
+                <DetailListIt icon="phone" title="Work" subtitle={phone} />
+                <DetailListIt icon="smartphone" title="Personal" subtitle={cell} />
             </View>
         </View>
     );

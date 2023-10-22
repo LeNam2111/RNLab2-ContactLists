@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text} from "react-native";
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
 import PropTypes from 'prop-types'
 
 import colors from "../until/color";
@@ -15,7 +16,7 @@ const DetailListIt = ({icon, title,subtitle}) =>{
                         name={icon}
                         size={24}
                         style={{
-                            color: color.black,
+                            color: colors.black,
                             marginRight: 20
                         }}
                         />
@@ -44,8 +45,8 @@ const styles = StyleSheet.create({
     },
     wrapper:{
         flexDirection:'row',
-        paddingTop:16,
-        paddingBottom:16,
+        paddingTop:20,
+        paddingBottom:20,
         paddingRight:24,
         borderBottomColor: colors.grey,
         borderBottomWidth: StyleSheet.hairlineWidth

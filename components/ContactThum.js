@@ -1,7 +1,9 @@
+import 'react-native-gesture-handler';
+
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Image, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import PropType from 'prop-types'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 import color from '../until/color';
 
 const ContactThum = ({ name, phone, avatar, textColor, onPress }) => {
@@ -12,14 +14,17 @@ const ContactThum = ({ name, phone, avatar, textColor, onPress }) => {
     const ImageContact = onPress ? TouchableOpacity : View;
 
     return (
-        <View style={style.container}>
+        <View style={styles.container}>
             <ImageContact onPress={onPress}>
-                source{{
-                    uri: avatar,
-                }}
+                <Image
+                    source={{
+                        uri: avatar,
+                    }}
+                    style={styles.avatar}
+                />
             </ImageContact>
 
-            {name !== '' && <Text style={[style.name, colorStyle]}>{name}</Text>}
+            {name !== '' && <Text style={[styles.name, colorStyle]}>{name}</Text>}
 
             {phone !== '' && (
                 <View style={styles.phoneSection}>
@@ -33,49 +38,50 @@ const ContactThum = ({ name, phone, avatar, textColor, onPress }) => {
 
 export default ContactThum;
 
-ContactThum.PropType = {
+ContactThum.propTypes = {
     name: PropTypes.string,
     avatar: PropTypes.string,
     phone: PropTypes.string,
     onPress: PropTypes.func,
 }
 
-ContactThum.defautProps = {
+ContactThum.defaultProps = {
     name: '',
     phone: '',
     textColor: 'white',
-    onPress: 'null'
+    onPress: null,
 }
+
 const styles = StyleSheet.create({
-    container :{
+    container: {
         paddingVertical: 30,
         marginHorizontal: 15,
         alignItems: 'center',
         justifyContent: 'center',
     },
 
-    avatar :{
-        width:90,
-        height:90,
+    avatar: {
+        width: 90,
+        height: 90,
         borderRadius: 45,
         borderColor: 'white',
         borderWidth: 2,
     },
-    name:{
-        fontSize:20,
-        marginTop:24,
-        marginBottom:2,
+    name: {
+        fontSize: 20,
+        marginTop: 24,
+        marginBottom: 2,
         fontWeight: 'bold',
     },
-    phoneSection:{
-        flexDirection:'row',
-        marginTop:4,
+    phoneSection: {
+        flexDirection: 'row',
+        marginTop: 4,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    phone:{
-        marginLeft:4,
-        fontSize:16,
-        fontWeight:'bold',
+    phone: {
+        marginLeft: 4,
+        fontSize: 16,
+        fontWeight: 'bold',
     }
 })
